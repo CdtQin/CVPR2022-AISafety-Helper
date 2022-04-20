@@ -3,7 +3,7 @@ import argparse
 
 def count_params(model):
     total = sum(p.numel() for p in model.parameters())
-    # 30M float params roughly equals to 120M model size
+    # 30M float params roughly equal to 120M model size
     assert total < 30 * 1e6, 'total params : ' + str(total / 1e6) + 'M'
 
 def count_flops_and_shape(model, track):
