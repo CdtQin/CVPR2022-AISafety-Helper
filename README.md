@@ -27,7 +27,7 @@ from model import Model
 model = Model().float()
 ```
 
-Besides, the input of your model is a tensor whose shape is 1x3x224x224. The range of the tensor is 0 to 1, and the channel order is BGR. If you prefer your own normalization parameter, you can conduct the conversion in your own model.
+Besides, the input of your model is a tensor whose shape is 1x3x224x224. The range of the tensor is 0 to 1, and the channel order is BGR. If you prefer your own normalization hyper-parameter, you can conduct the conversion in your own model.
 
 
 ### Environment
