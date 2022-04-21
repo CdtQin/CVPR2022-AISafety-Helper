@@ -8,6 +8,8 @@ class Model(nn.Module):
         self.load_params()
 
     def load_params(self):
+        # import os
+        # os.path.join(os.path.dirname(__file__), 'ckpt.pth')
         pass
 
     def forward(self, x):
