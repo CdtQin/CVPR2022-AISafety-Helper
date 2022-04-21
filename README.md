@@ -36,7 +36,11 @@ The input of your model is a tensor whose shape is Nx3x224x224. The range of the
 ### No a NN Methods
 
 For those participants who do not utilize NN method, mainly for Track2, your method can be packed into the forward function in submit/model.py .
-Note that you should maintain some paramters in the model, which is required by DistributedDataParallel of PyTorch.
+Note that you should maintain some paramters in the model, which is required by DistributedDataParallel of PyTorch. Otherwise, your submission will encounter:
+
+```
+assertionerror: DistributedDataParallel is not needed when a module doesn't have any parameter that requires a gradient
+```
 
 ### Track2 Evaluation
 
