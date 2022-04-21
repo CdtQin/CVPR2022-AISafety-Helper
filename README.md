@@ -33,7 +33,7 @@ model = Model().float()
 
 The input of your model is a tensor whose shape is Nx3x224x224. The range of the tensor is 0 to 1, and the channel order is BGR. If you prefer your own normalization hyper-parameter, you can conduct the conversion in your own model. For Track1, your output should be Nx100, while for Track2, the output should be Nx1.
 
-### No a NN Methods
+### No a NN Method
 
 For those participants who do not utilize NN method, mainly for Track2, your method can be packed into the forward function in submit/model.py .
 Note that you should maintain some paramters in the model, which is required by DistributedDataParallel of PyTorch. Otherwise, your submission will encounter:
