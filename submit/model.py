@@ -10,5 +10,5 @@ class Model(nn.Module):
     def load_params(self):
         pass
 
-    def forward(self):
+    def forward(self, x):
         pass
