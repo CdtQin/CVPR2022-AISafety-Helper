@@ -31,7 +31,13 @@ from model import Model
 model = Model().float()
 ```
 
-Besides, the input of your model is a tensor whose shape is Nx3x224x224. The range of the tensor is 0 to 1, and the channel order is BGR. If you prefer your own normalization hyper-parameter, you can conduct the conversion in your own model. For Track1, your output should be Nx100, while for Track2, the output should be Nx1.
+### Model Inference
+
+The input of your model is a tensor whose shape is Nx3x224x224. The range of the tensor is 0 to 1, and the channel order is BGR. If you prefer your own normalization hyper-parameter, you can conduct the conversion in your own model. For Track1, your output should be Nx100, while for Track2, the output should be Nx1.
+
+### Track2 Evaluation
+
+For track2, your model should predict a confidence score for each input image. We will first sort the scores of the whole dataset, and then find out the best threshold that yields the highest F1-Score. And this F1-Score will be your final score.
 
 
 ### Environment
