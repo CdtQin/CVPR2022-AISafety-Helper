@@ -42,6 +42,8 @@ Note that you should maintain some paramters in the model, which is required by 
 assertionerror: DistributedDataParallel is not needed when a module doesn't have any parameter that requires a gradient
 ```
 
+see example here: non-nn/model.py
+
 ### Track2 Evaluation
 
 For track2, your model should predict a confidence score for each input image. We will first sort the scores of the whole dataset, and then find out the best threshold that yields the highest F1-Score. And this F1-Score will be your final score.
