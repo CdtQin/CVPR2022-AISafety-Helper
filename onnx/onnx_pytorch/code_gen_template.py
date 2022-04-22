@@ -35,6 +35,23 @@ class Model(nn.Module):
       self._vars[os.path.basename(b)[:-4]] = nn.Parameter(v, requires_grad=requires_grad)
     {model_init}
 
+    start = False
+    lines = open(__file__).readlines()
+    keys = []
+    for line in lines:
+      if start:
+        num = line.count(\'self._vars[\\\"\')
+        ed = 0
+        for i in range(num):
+          st = line.find(\'self._vars[\\\"\', ed) + len(\'self._vars[\\\"\')
+          ed = line.find(\'\\\"\', st)
+          keys.append(line[st:ed])
+      if 'def forward(self, *inputs):' in line:
+        start = True
+    for key in self._vars:
+      if not key in keys:
+        self._vars[key] = None
+
   def forward(self, *inputs):
     {model_forward}
 
