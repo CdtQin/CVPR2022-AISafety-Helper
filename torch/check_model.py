@@ -19,7 +19,7 @@ def main():
     model.eval()
     with torch.no_grad():
         output = model(input)
-    if track == 1:
+    if args.track == 1:
         assert output.numel() == 100
     else:
         assert output.numel() == 1
