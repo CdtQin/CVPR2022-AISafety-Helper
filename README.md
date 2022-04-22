@@ -20,7 +20,7 @@ an simple example of model.py can be found at submit/model.py . We decompress yo
 shutil.unpack_archive(your_zip_file_name, model_torch_dir, "zip")
 ```
 
-Based on the rule of model size, the submitted model should contain no more than 30M Float parameters (120Mb in model size), and its operations should be lower than 5G FLOPs. We release the check script at torch/check_model.py (currently, the code is not robust, and we are going to use ptflops, we will update the file while we finished test on our server.). In this file, you can see how the model is loaded:
+Based on the rule of model size, the submitted model should contain no more than 30M Float parameters (120Mb in model size), and its operations should be lower than 5G FLOPs. We release the check script at torch/check_model.py . In this file, you can see how the model is loaded:
 
 ```Shell
 import sys
