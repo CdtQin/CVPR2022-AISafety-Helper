@@ -12,7 +12,7 @@ def main():
     sys.path.append(args.model) 
     from model import Model
     model = Model().float()
-    flops, params = get_model_complexity_info(m, (3, 224, 224), as_strings=False, print_per_layer_stat=False)
+    flops, params = get_model_complexity_info(model, (3, 224, 224), as_strings=False, print_per_layer_stat=False)
     assert params < 30 * 1e6, 'total params : ' + str(params / 1e6) + 'M'
     assert flops < 5 * 1e9, 'Flops: ' + str(flops / 1e9) + 'G'
     input = torch.zeros(1,3,224,224)
