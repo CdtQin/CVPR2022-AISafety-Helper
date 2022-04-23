@@ -50,7 +50,7 @@ class Model(nn.Module):
         start = True
     for key in self._vars:
       if not key in keys:
-        self._vars[key] = None
+        self._vars[key] = torch.nn.Parameter(torch.randn(0))
 
   def forward(self, *inputs):
     {model_forward}
