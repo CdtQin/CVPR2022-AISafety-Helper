@@ -23,5 +23,5 @@ class ClipOpCodeGenerator(OpCodeGenerator):
       inputs_str.append(str(max))
     init_str, forward_str = [], []
     forward_str.append(
-        f"{outputs_str[0]} = torch.clip({', '.join(inputs_str)})")
+        f"{outputs_str[0]} = torch.clamp({', '.join(inputs_str)})")
     return {"init": init_str, "forward": forward_str}
