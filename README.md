@@ -15,7 +15,7 @@ For the second option, we require a zip file, which directly contains a file nam
 └── any other files
 ```
 
-use command zip -r xxx.zip * !!!!!!!!!
+!!!!!!!!! use command zip -r xxx.zip * !!!!!!!!!
 
 an simple example of model.py can be found at submit/model.py . We decompress your file with following code:
 ```Shell
